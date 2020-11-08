@@ -1,0 +1,198 @@
+@startuml
+
+title __MAZEBALL's Class Diagram__\n
+
+  namespace com.example.mazeball {
+    interface com.example.mazeball.EventListener {
+        {abstract} + levelFinished()
+    }
+  }
+  
+
+  namespace com.example.mazeball {
+    class com.example.mazeball.GameActivity {
+        + accEListener : SensorEventListener
+        ~ accSensor : Sensor
+        ~ accX : float
+        ~ accY : float
+        ~ mapIndex : int
+        ~ mazeMapsI : ArrayList<ArrayList<Integer[]>>
+        ~ mazeMapsS : ArrayList<ArrayList<String>>
+        ~ muteButton : ImageButton
+        ~ muted : boolean
+        ~ playerAvatar : int
+        ~ sensorManager : SensorManager
+        ~ sharedpreferences : SharedPreferences
+        + calibrateAccelerometer()
+        + levelFinished()
+        + muteGame()
+        + nextLevel()
+        + nextLevel()
+        + onResume()
+        + onStop()
+        + onWindowFocusChanged()
+        + pauseGame()
+        + quitGame()
+        + resumeGame()
+        # onCreate()
+        - cloneArray()
+        - hideSystemUI()
+        - loadLevels()
+    }
+  }
+  
+
+  namespace com.example.mazeball {
+    class com.example.mazeball.LevelSelector {
+        ~ maxLevel : int
+        ~ muted : boolean
+        ~ sharedpreferences : SharedPreferences
+        + close()
+        + onWindowFocusChanged()
+        + openLevel()
+        # onCreate()
+        # onResume()
+        - hideSystemUI()
+        - setGrayAll()
+    }
+  }
+  
+
+  namespace com.example.mazeball {
+    class com.example.mazeball.MainActivity {
+        ~ muteBtn : ImageButton
+        ~ muted : boolean
+        ~ playerAvatar : int
+        ~ sharedpreferences : SharedPreferences
+        + closeSettings()
+        + launchGame()
+        + mute()
+        + onWindowFocusChanged()
+        + openSettings()
+        + setPlayer()
+        # onCreate()
+        # onResume()
+        - hideSystemUI()
+        - setGray()
+        - setGrayAll()
+        - setPlayer()
+    }
+  }
+  
+
+  namespace com.example.mazeball {
+    class com.example.mazeball.Settings_view {
+        + Settings_view()
+        + Settings_view()
+        # onDraw()
+        - init()
+    }
+  }
+  
+
+  namespace com.example.mazeball {
+    class com.example.mazeball.SoundPlayer {
+        {static} - clickSound : int
+        {static} - dClick : int
+        - muted : boolean
+        {static} - soundPool : SoundPool
+        {static} - winSound : int
+        + SoundPlayer()
+        + playClickSound()
+        + playDClickSound()
+        + playWinSound()
+        + setMuted()
+    }
+  }
+  
+
+  namespace com.example.mazeball {
+    class com.example.mazeball.Win_view {
+        + Win_view()
+        + Win_view()
+        # onDraw()
+        - init()
+    }
+  }
+  
+
+  namespace com.example.mazeball {
+    class com.example.mazeball.game_view {
+        ~ accXOffset : float
+        ~ accYOffset : float
+        ~ avatarId : int
+        ~ bmp : Bitmap[]
+        ~ end : boolean
+        ~ gameHeight : int
+        ~ gameWidth : int
+        ~ goalPos : int[]
+        ~ height : int
+        ~ mazeMap : Integer[][]
+        ~ paused : boolean
+        ~ player : Bitmap[]
+        ~ playerPos : int[]
+        ~ width : int
+        + attachActivity()
+        + calibrateAccelerometer()
+        + game_view()
+        + game_view()
+        + game_view()
+        + movePlayer()
+        + setAvatar()
+        + setMazeMap()
+        + setPaused()
+        + setRotationValues()
+        # onDraw()
+        # onSizeChanged()
+        - canMove()
+        - init()
+    }
+  }
+  
+
+  namespace com.example.mazeball {
+    enum moveDir {
+      DOWN
+      LEFT
+      RIGHT
+      UP
+    }
+  }
+  
+
+  namespace com.example.mazeball {
+    class com.example.mazeball.pause_view {
+        + pause_view()
+        + pause_view()
+        # onDraw()
+        - init()
+    }
+  }
+  
+
+  com.example.mazeball.GameActivity .up.|> com.example.mazeball.EventListener
+  com.example.mazeball.GameActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.mazeball.GameActivity o-- com.example.mazeball.game_view : gameView
+  com.example.mazeball.GameActivity o-- com.example.mazeball.pause_view : pauseView
+  com.example.mazeball.GameActivity o-- com.example.mazeball.SoundPlayer : soundPlayer
+  com.example.mazeball.GameActivity o-- com.example.mazeball.Win_view : winView
+  com.example.mazeball.LevelSelector -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.mazeball.LevelSelector o-- com.example.mazeball.SoundPlayer : soundPlayer
+  com.example.mazeball.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.mazeball.MainActivity o-- com.example.mazeball.Settings_view : settingsView
+  com.example.mazeball.MainActivity o-- com.example.mazeball.SoundPlayer : soundPlayer
+  com.example.mazeball.Settings_view -up-|> androidx.constraintlayout.widget.ConstraintLayout
+  com.example.mazeball.Win_view -up-|> androidx.constraintlayout.widget.ConstraintLayout
+  com.example.mazeball.game_view -up-|> android.view.View
+  com.example.mazeball.game_view o-- com.example.mazeball.EventListener : listener
+  com.example.mazeball.pause_view -up-|> androidx.constraintlayout.widget.ConstraintLayout
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

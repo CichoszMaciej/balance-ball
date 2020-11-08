@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelSelector">
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/menubg_foreground"
+        tools:layout_editor_absoluteX="65dp" />
+
+    <ImageView
+        android:tag="2"
+        android:onClick="openLevel"
+        android:id="@+id/levelBtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="40dp"
+        android:background="#00FFFFFF"
+        android:scaleType="center"
+        app:layout_constraintEnd_toStartOf="@+id/levelBtn3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/twobutton_foreground" />
+
+    <ImageView
+        android:id="@+id/levelBtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="40dp"
+        android:background="#00FFFFFF"
+        android:onClick="openLevel"
+        android:scaleType="center"
+        android:tag="1"
+        app:layout_constraintEnd_toStartOf="@+id/levelBtn2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/onebutton_foreground" />
+
+    <ImageView
+        android:tag="5"
+        android:onClick="openLevel"
+        android:id="@+id/levelBtn5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="40dp"
+        android:background="#00FFFFFF"
+        android:scaleType="center"
+        app:layout_constraintEnd_toStartOf="@+id/levelBtn6"
+        app:layout_constraintTop_toBottomOf="@+id/levelBtn1"
+        app:srcCompat="@mipmap/fivebutton_foreground" />
+
+    <ImageView
+        android:tag="6"
+        android:onClick="openLevel"
+        android:id="@+id/levelBtn6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="40dp"
+        android:background="#00FFFFFF"
+        android:scaleType="center"
+        app:layout_constraintEnd_toStartOf="@+id/levelBtn7"
+        app:layout_constraintTop_toBottomOf="@+id/levelBtn2"
+        app:srcCompat="@mipmap/sixbutton_foreground" />
+
+    <ImageView
+        android:tag="7"
+        android:onClick="openLevel"
+        android:id="@+id/levelBtn7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="40dp"
+        android:background="#00FFFFFF"
+        android:scaleType="center"
+        app:layout_constraintEnd_toStartOf="@+id/levelBtn8"
+        app:layout_constraintTop_toBottomOf="@+id/levelBtn3"
+        app:srcCompat="@mipmap/sevenbutton_foreground" />
+
+    <ImageView
+        android:id="@+id/levelBtn8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="135dp"
+        android:background="#00FFFFFF"
+        android:onClick="openLevel"
+        android:scaleType="center"
+        android:tag="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/levelBtn4"
+        app:srcCompat="@mipmap/eightbutton_foreground" />
+
+    <ImageButton
+        android:id="@+id/settingsButton2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/closebutton_foreground"
+        android:onClick="close"/>
+
+    <ImageView
+        android:id="@+id/levelBtn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="135dp"
+        android:background="#00FFFFFF"
+        android:onClick="openLevel"
+        android:scaleType="center"
+        android:tag="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/fourbutton_foreground" />
+
+    <ImageView
+        android:tag="3"
+        android:onClick="openLevel"
+        android:id="@+id/levelBtn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="40dp"
+        android:background="#00FFFFFF"
+        android:scaleType="center"
+        app:layout_constraintEnd_toStartOf="@+id/levelBtn4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/threebutton_foreground" />
+</androidx.constraintlayout.widget.ConstraintLayout>
