@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="casual"
-        android:text="Maze Runner"
+        android:text="Labirynt"
         android:textColor="#519221"
         android:textSize="90sp"
         android:textStyle="bold"
@@ -62,7 +62,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text=" Maze Runner " />
+        tools:text="Labirynt" />
 
     <com.example.mazeball.Settings_view
         android:id="@+id/settingsView"
